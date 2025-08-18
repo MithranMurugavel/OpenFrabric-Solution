@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Reconciliation Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction Reconciliation Dashboard</h1>
+
+        <div class="upload-section">
+            <h2>Upload Settlement Report</h2>
+            <input type="file" id="settlementFile" accept=".csv">
+            <button id="uploadButton">Upload and Reconcile</button>
+            <p id="uploadMessage"></p>
+        </div>
+
+        <div class="dashboard-summary">
+            <h2>Dashboard Summary</h2>
+            <div id="summaryData">
+                <p>Total Transactions Processed: <span id="totalTransactions"></span></p>
+                <p>Total Settlements Processed: <span id="totalSettlements"></span></p>
+                <p>Critical Issues: <span id="criticalIssues"></span></p>
+                <p>Warning Issues: <span id="warningIssues"></span></p>
+                <p>Total Outstanding Amount: <span id="outstandingAmount"></span></p>
+                <p>Avg. Days to Settle: <span id="avgDaysToSettle"></span></p>
+                <p>Settlement Rate: <span id="settlementRate"></span>%</p>
+                <h3>Settlement Status Breakdown:</h3>
+                <ul id="statusBreakdown"></ul>
+            </div>
+        </div>
+
+        <div class="transaction-list">
+            <h2>Transaction List</h2>
+            <div class="filter-section">
+                Filter by Status: 
+                <select id="statusFilter">
+                    <option value="">All</option>
+                    <option value="PENDING">Pending</option>
+                    <option value="PARTIAL">Partial</option>
+                    <option value="FULLY_SETTLED">Fully Settled</option>
+                    <option value="OVER_SETTLED">Over Settled</option>
+                    <option value="REFUNDED">Refunded</option>
+                    <option value="FAILED">Failed</option>
+                    <option value="DECLINED">Declined</option>
+                </select>
+            </div>
+            <table id="transactionsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Merchant</th>
+                        <th>Amount</th>
+                        <th>Settlement Status</th>
+                        <th>Settled Amount</th>
+                        <th>Issue Flag</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transactions will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="transactionDetailModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Transaction Details</h2>
+                <div id="detailContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
