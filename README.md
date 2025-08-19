@@ -27,11 +27,17 @@ Transaction Reconciliation System: A prototype for automating reconciliation by 
     cd backend
     python -m venv venv
     ```
+2. **Activate the virtual env**
 
-2. **Run the application**
+   ```bash
+   .\venv\Scripts\activate
+   ```
+   
+3. **Run the application**
 
    ```bash
    python app.py
    ```
 port: 5000
    
+
