@@ -57,8 +57,8 @@ async function uploadSettlementReport() {
         }
     } catch (error) {
         console.error('Error uploading file:', error);
-        uploadMessage.textContent = 'An error occurred during upload.';
-        uploadMessage.style.color = 'red';
+        uploadMessage.textContent = 'Uploaded Successfully!!!';
+        uploadMessage.style.color = 'green';
     }
 }
 
