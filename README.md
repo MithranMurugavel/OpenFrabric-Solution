@@ -17,3 +17,21 @@ Transaction Reconciliation System: A prototype for automating reconciliation by 
     cd frontend
     start index.html
     ```
+## Backend Setup
+
+ 1. **Open virtual Environment**
+
+    Navigate to the backend directory:
+
+    ```bash
+    cd backend
+    python -m venv venv
+    ```
+
+2. **Run the application**
+
+   ```bash
+   python app.py
+   ```
+port: 5000
+   
